@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
   this is roman number converter project 
-Parameters:
   
 Resources:
   
