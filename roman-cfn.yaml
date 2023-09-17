@@ -1,15 +1,24 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
   this is roman number converter project 
-  
+Parameters:
+  KeyName:
+    Description: Name of an existing EC2 Key Pair for SSH access
+    Type: AWS::EC2::KeyPair::firskey
+    ConstraintDescription: Must be the name of an existing EC2 Key Pair.
+    Default: firstkey  # İlk olarak "first2" anahtar çiftini kullanır
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/al2023-ami-minimal-kernel-6.1-x86_64'
+
 Resources:
   
   MyWebServer:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-04cb4ca688797756f
+      ImageId: !Ref LatestAmiId
       InstanceType: t2.micro
-      KeyName: firstkey
+      KeyName: !Ref KeyName
       SecurityGroupIds: 
         - !Ref MySecGrp
       Tags:
@@ -53,4 +62,3 @@ Outputs:
       - http://${PublicAddress}
       - PublicAddress: !GetAtt MyWebServer.PublicDnsName
     Description: Roman Number Application URL
-
