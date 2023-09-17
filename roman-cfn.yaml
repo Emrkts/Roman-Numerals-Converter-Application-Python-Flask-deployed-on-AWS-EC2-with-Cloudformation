@@ -26,9 +26,9 @@ Resources:
           pip install Flask 
           yum install wget -y
           yum install httpd -y
-          wget https://raw.githubusercontent.com/Mecit-tuksoy/aws_projects/main/Roman-Numerals-Converter/roman-numerals-converter-app.py
-          wget -P templates https://raw.githubusercontent.com/Mecit-tuksoy/aws_projects/main/Roman-Numerals-Converter/templates/index.html
-          wget -P templates https://raw.githubusercontent.com/Mecit-tuksoy/aws_projects/main/Roman-Numerals-Converter/templates/result.html
+          wget https://raw.githubusercontent.com/Emrkts/Roman-numerals-converter/main/roman-numerals-converter-app.py
+          wget -P templates https://raw.githubusercontent.com/Emrkts/Roman-numerals-converter/main/templates/index.html
+          wget -P templates https://raw.githubusercontent.com/Emrkts/Roman-numerals-converter/main/templates/result.html
           sudo python3 roman-numerals-converter-app.py
 
   
