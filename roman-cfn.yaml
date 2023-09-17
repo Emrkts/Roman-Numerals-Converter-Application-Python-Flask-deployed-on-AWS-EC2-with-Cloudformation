@@ -4,9 +4,8 @@ Description: |
 Parameters:
   KeyName:
     Description: Name of an existing EC2 Key Pair for SSH access
-    Type: AWS::EC2::KeyPair::firskey
+    Type: AWS::EC2::KeyPair::KeyName
     ConstraintDescription: Must be the name of an existing EC2 Key Pair.
-    Default: firstkey  # İlk olarak "first2" anahtar çiftini kullanır
   LatestAmiId:
     Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
     Default: '/aws/service/ami-amazon-linux-latest/al2023-ami-minimal-kernel-6.1-x86_64'
